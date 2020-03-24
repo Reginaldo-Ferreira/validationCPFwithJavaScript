@@ -12,18 +12,19 @@
 
 var main = function(){
    var demo = document.getElementById("demo");
-   var cpf = "704.326.351-49";
+   var cpf = "000.000.000-00"; // coloque aqui o seu cpf
    demo.innerHTML = cpf;
 };
 
 function myFunction() {
   var str = document.getElementById("demo").innerHTML;
-  var res = str.replace(/\.|\-/g, "");
+  var res = str.replace(/\.|\-/g, ""); // retira '.' e '-' deixando somente os numeros
   document.getElementById("demo").innerHTML = res;
-  alert(TestaCPF(res));
+  alert(TestaCPF(res)); // teste validação de cpf....
 };
-
-function TestaCPF(strCPF) {
+   
+//  algoritmo da receita federal para validar um cpf 
+function TestaCPF(strCPF) { // essa função retorno true or false
     var Soma;
     var Resto;
     Soma = 0;
